@@ -1,5 +1,8 @@
 function print() {
-  const printWindow = window.open("/print", "_blank");
+  // Get the base path from the current location
+  const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+  const printPath = basePath ? `${basePath}/print` : '/print';
+  const printWindow = window.open(printPath, "_blank");
   printWindow.onload = function () {
     printWindow.print();
     // Close the print window after a delay
@@ -8,8 +11,10 @@ function print() {
 }
 
 function generatePDF() {
-  // Get the print layout URL
-  const printURL = new URL("print", window.location.href).href;
+  // Get the print layout URL - handle baseurl correctly
+  const basePath = window.location.pathname.split('/').slice(0, -1).join('/') || '';
+  const printPath = basePath ? `${basePath}/print` : '/print';
+  const printURL = new URL(printPath, window.location.origin).href;
 
   // Fetch the print layout content
   fetch(printURL)
