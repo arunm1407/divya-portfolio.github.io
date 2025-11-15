@@ -2,11 +2,11 @@
 
 # Site Settings
 title: Divya Vijay - Resume
-url: 'https://divya-portfolio.github.io'
+url: 'https://arunm1407.github.io'
 
 #change it according to your repository name
 # disabling since we are using a custom domain
-baseurl: '' 
+baseurl: '/divya-portfolio.github.io' 
 
 description: A beautiful Jekyll theme for creating resume
 # Style will be applied only after restarting the build or serve. Just choose one of the options.
